@@ -15,8 +15,8 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./image/violin_set.png "Visualization"
-[image2]: ./image/greyscale_prepro.png "Grayscaling"
+[image1]: ./images/violin_set.png "Visualization"
+[image2]: ./images/greyscale_prepro.png "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
 [image4]: ./examples/placeholder.png "Traffic Sign 1"
 [image5]: ./examples/placeholder.png "Traffic Sign 2"
