@@ -15,8 +15,8 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./image/visualization.jpg "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
+[image1]: ./image/violin_set.png "Visualization"
+[image2]: ./image/greyscale_prepro.png "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
 [image4]: ./examples/placeholder.png "Traffic Sign 1"
 [image5]: ./examples/placeholder.png "Traffic Sign 2"
@@ -34,7 +34,7 @@ This is my writeup for the Traffic Sign Classifier Project! And, here is a link 
 
 ### Data Set Summary & Exploration
 
-
+#### basic summary of the data set.
 I used the python and numpy.shape to calculate summary statistics of the traffic signs data set:
 
 * The size of training set is 34799
@@ -45,18 +45,19 @@ I used the python and numpy.shape to calculate summary statistics of the traffic
 
 Please refer to the Jupyter notebook for the code used to get these nnumbers.
 
-
 #### Exploratory visualization of the dataset.
 
-Here is an exploratory visualization of the data set. It is a violin chart showing how the data is distributed in the 
+Here is an exploratory visualization of the data set. It is a violin chart showing how the data is distributed in the Validation, Test, and Training sets. The y-axis is the labels of the traffic signs and the width of the blue area of each set is the relative frequency of the sign in the set. 
 
 ![alt text][image1]
 
-###Design and Test a Model Architecture
+It looks like there are more examples for the signs with labels between 1 and 15, so the Model is expected to be able to recognize these signs better. These are mostly the speed limit signs. We will see if that's the case.
 
-####1. Describe how you preprocessed the image data. What techniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, and provide example images of the additional data. Then describe the characteristics of the augmented training set like number of images in the set, number of images for each class, etc.)
+### Design and Test a Model Architecture
 
-As a first step, I decided to convert the images to grayscale because ...
+#### Pre-processing
+I decided to convert the images to grayscale because I wanted to see how well the LeNet-5 network would do without the color information. To do so, I multiplied the red, green, and blue values of each pixel of each image by their luminance-preserving coefficients from [Wikipedia](https://en.wikipedia.org/wiki/Grayscale#Converting_color_to_grayscale):
+>  X_train_grey=np.dot(X_train, [0.2126, 0.7152, 0.0722])[:,:,:,np.newaxis]
 
 Here is an example of a traffic sign image before and after grayscaling.
 
