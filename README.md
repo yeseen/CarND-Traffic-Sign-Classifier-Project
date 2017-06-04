@@ -53,6 +53,8 @@ Here is an exploratory visualization of the data set. It is a violin chart showi
 
 It looks like there are more examples for the signs with labels between 1 and 15, so the Model is expected to be able to recognize these signs better. These are mostly the speed limit signs. We will see if that's the case.
 
+In this visualization, we can also see that the three sets have a very similar distribution so the validation accuracy will not be skewed for a particular sign. 
+
 ### Design and Test a Model Architecture
 
 #### Pre-processing
@@ -63,20 +65,10 @@ Here is an example of a traffic sign image before and after grayscaling.
 
 ![alt text][image2]
 
-As a last step, I normalized the image data because ...
+As a last step, I normalized the image data so that the weight of the network don't blow up by trying to do the normalization themselves. This is done simply by substracting 128 from each pixel value and diving it by 128:
+> X_train_norm=(X_train_grey-128*np.ones(X_train_grey.shape[1:4]))/128
 
-I decided to generate additional data because ... 
-
-To add more data to the the data set, I used the following techniques because ... 
-
-Here is an example of an original image and an augmented image:
-
-![alt text][image3]
-
-The difference between the original data set and the augmented data set is the following ... 
-
-
-####2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
+#### final model architecture
 
 My final model consisted of the following layers:
 
@@ -107,8 +99,11 @@ My final model results were:
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
+The first architecture was the LeNet-5 one from the lab solution. It was used as a starting model.
 * What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to overfitting or underfitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
+The Validation Accuracy was 0.892 below the required accuracy of 0.93.
+* How was the architecture adjusted and why was it adjusted? 
+The accuracy peaked in Epoch 5 to 0.897 before decreasing to 0.889 in Epoch 6 and to 888 in Epoch 7 indicating some overfitting. 
 * Which parameters were tuned? How were they adjusted and why?
 * What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
 
