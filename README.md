@@ -15,7 +15,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/visualization.jpg "Visualization"
+[image1]: ./image/visualization.jpg "Visualization"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
 [image3]: ./examples/random_noise.jpg "Random Noise"
 [image4]: ./examples/placeholder.png "Traffic Sign 1"
@@ -30,7 +30,7 @@ In this writeup, I will consider the [rubric points](https://review.udacity.com/
 ---
 ### Writeup
 
-This is my writeup for the Traffic Sign Classifier Project! and here is a link to my [project code](https://github.com/yeseen/CarND-Traffic-Sign-Classifier-Project/Traffic_Sign_Classifier.ipynb)
+This is my writeup for the Traffic Sign Classifier Project! And, here is a link to my [project code](https://github.com/yeseen/CarND-Traffic-Sign-Classifier-Project/Traffic_Sign_Classifier.ipynb)
 
 ### Data Set Summary & Exploration
 
@@ -43,12 +43,12 @@ I used the python and numpy.shape to calculate summary statistics of the traffic
 * The shape of a traffic sign image is (32, 32, 3)
 * The number of unique classes/labels in the data set is 43
 
-Please refer to the Jupyter notebook for the code used.
+Please refer to the Jupyter notebook for the code used to get these nnumbers.
 
 
-####2. Include an exploratory visualization of the dataset.
+#### Exploratory visualization of the dataset.
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
+Here is an exploratory visualization of the data set. It is a violin chart showing how the data is distributed in the 
 
 ![alt text][image1]
 
