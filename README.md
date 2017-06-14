@@ -18,7 +18,7 @@ The goals / steps of this project are the following:
 [image1]: ./images/violin_set.png "Visualization"
 [image2]: ./images/greyscale_prepro.png "Grayscaling"
 [image3]: ./images/30.png "Traffic Sign 0"
-[image4]: ./images/50.pngg "Traffic Sign 1"
+[image4]: ./images/50.png "Traffic Sign 1"
 [image5]: ./images/60.png "Traffic Sign 2"
 [image6]: ./images/oneway.png "Traffic Sign 3"
 [image7]: ./images/pedestrian.png "Traffic Sign 4"
@@ -80,9 +80,9 @@ My final model consisted of the following layers:
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x3 RGB image   							| 
 | Convolution 3x3     	| 1x1 stride, valid padding, outputs 28x28x6 	|
-| RELU					|												|
+| Activation					|				RELU				|
 | Convolution 3x3	    | 1x1 stride, valid padding, outputs 24X24X24      									|
-| RELU					|												|
+| Activation					|					RELU					|
 | Fully connected		| Input = 13824. Output = 1200.       									|
 | Fully connected		| Input = 1200. Output = 150.       									|
 | Fully connected		| Input = 150. Output = 84.       									|
