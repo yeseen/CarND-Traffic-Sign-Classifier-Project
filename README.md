@@ -17,12 +17,12 @@ The goals / steps of this project are the following:
 
 [image1]: ./images/violin_set.png "Visualization"
 [image2]: ./images/greyscale_prepro.png "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image3]: ./images/30kmh.jpg "Traffic Sign 0"
+[image4]: ./images/50kmh.png "Traffic Sign 1"
+[image5]: ./images/60kmh.png "Traffic Sign 2"
+[image6]: ./images/oneway.jpg "Traffic Sign 3"
+[image7]: ./images/pedestrian.jpg "Traffic Sign 4"
+[image8]: ./images/stop.jpg "Traffic Sign 5"
 
 ## Rubric Points
 In this writeup, I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -98,7 +98,7 @@ To train the model, I used the same optimizer as the LeNet-5 solution, and I adj
 > EPOCHS = 25
 > BATCH_SIZE = 120
 
-#### the approach
+#### Approach
 
 My final model results were:
 * training set accuracy of 0.998
@@ -118,13 +118,13 @@ The learning rate and the number of epochs were the parameters that I adjusted t
 I kept the convolution layers for their importance in applying the network's "knowledge" to different parts of input images while I added fully connected layers to harness the black (box) magic of deep learning.
 
 
-###Test a Model on New Images
+### Testing the Model on New Images
 
-####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+#### Test images
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
+![alt text][image3] ![alt text][image4] ![alt text][image5] ![alt text][image6] 
 ![alt text][image7] ![alt text][image8]
 
 The first image might be difficult to classify because ...
