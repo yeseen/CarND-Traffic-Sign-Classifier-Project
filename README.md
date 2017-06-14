@@ -68,6 +68,10 @@ Here is an example of a traffic sign image before and after grayscaling.
 As a last step, I normalized the image data so that the weight of the network don't blow up by trying to do the normalization themselves. This is done simply by substracting 128 from each pixel value and diving it by 128:
 > X_train_norm=(X_train_grey-128*np.ones(X_train_grey.shape[1:4]))/128
 
+However, I found in practice that networks using color inputs performed better. So my final preprocessing consisted of only the normalization step:
+> X_train_norm=(X_train-128*np.ones(X_train.shape[1:4]))/128
+
+
 #### final model architecture
 
 My final model consisted of the following layers:
@@ -75,43 +79,44 @@ My final model consisted of the following layers:
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
+| Convolution 3x3     	| 1x1 stride, valid padding, outputs 28x28x6 	|
 | RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
+| Convolution 3x3	    | 1x1 stride, valid padding, outputs 24X24X24      									|
+| RELU					|												|
+| Fully connected		| Input = 13824. Output = 1200.       									|
+| Fully connected		| Input = 1200. Output = 150.       									|
+| Fully connected		| Input = 150. Output = 84.       									|
+| Fully connected		| Input = 84. Output = 43.       									|
+
+Really exploring the potential of a fully connected neural network with 4 fully connected layers.
  
 
+#### Training the model
 
-####3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
+To train the model, I used the same optimizer as the LeNet-5 solution, and I adjusted the learning rate (rate) , number of epochs (EPOCHS), and batch size ) (BATCH_SIZE) to reach the desired accuracy. The final values used are:
+> rate = 0.0005
+> EPOCHS = 25
+> BATCH_SIZE = 120
 
-To train the model, I used an ....
-
-####4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
+#### the approach
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* training set accuracy of 0.998
+* validation set accuracy of 0.939 
+* test set accuracy of 0.929
 
-If an iterative approach was chosen:
+An iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
 The first architecture was the LeNet-5 one from the lab solution. It was used as a starting model.
 * What were some problems with the initial architecture?
 The Validation Accuracy was 0.892 below the required accuracy of 0.93.
 * How was the architecture adjusted and why was it adjusted? 
-The accuracy peaked in Epoch 5 to 0.897 before decreasing to 0.889 in Epoch 6 and to 888 in Epoch 7 indicating some overfitting. 
+I tried many adjustments such as doing the convolutions on separate color channels and removing a convolution layer, but what I worked the best is removing pooling layers and adding more fully connected layers
 * Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+The learning rate and the number of epochs were the parameters that I adjusted the most. As we're skiing down the error mountain, I thought of the learning rate as the parameter that allows us to shred past tree holes when it's big (avoid being stuck in locally optimal accuracies) and to avoid going through big jumps that lends us in bad spots when it's small (avoid overfitting the netrwork with the current batch)
+* What are some of the important design choices and why were they chosen? 
+I kept the convolution layers for their importance in applying the network's "knowledge" to different parts of input images while I added fully connected layers to harness the black (box) magic of deep learning.
 
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
- 
 
 ###Test a Model on New Images
 
