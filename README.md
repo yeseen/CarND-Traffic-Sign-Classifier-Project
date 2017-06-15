@@ -17,12 +17,12 @@ The goals / steps of this project are the following:
 
 [image1]: ./images/violin_set.png "Visualization"
 [image2]: ./images/greyscale_prepro.png "Grayscaling"
-[image3]: ./images/30.png "Traffic Sign 0"
-[image4]: ./images/50.png "Traffic Sign 1"
-[image5]: ./images/60.png "Traffic Sign 2"
-[image6]: ./images/oneway.png "Traffic Sign 3"
+[image3]: ./images/30.jpg "Traffic Sign 0"
+[image4]: ./images/50.jpg "Traffic Sign 1"
+[image5]: ./images/60.jpg "Traffic Sign 2"
+[image6]: ./images/oneway.jpg "Traffic Sign 3"
 [image7]: ./images/pedestrian.png "Traffic Sign 4"
-[image8]: ./images/stop.png "Traffic Sign 5"
+[image8]: ./images/stop.jpg "Traffic Sign 5"
 
 ## Rubric Points
 In this writeup, I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
