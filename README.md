@@ -132,7 +132,7 @@ Here are five German traffic signs that I found on the web:
 
 The second image might be difficult to classify because the sign is tilted and only taking half of the screen. This will be a test for the powers of the convolution steps. The fifth image is impossible to classify since there is no label for a pedestrian. I expect the model to do better on the three first images since they are speed limits, and the model was trained on more speed limit signs then other type of signs.
 
-#### Predictions
+#### Model Predictions
 
 Here are the results of the prediction:
 
@@ -147,11 +147,9 @@ Here are the results of the prediction:
 
 The model was able to correctly guess 2 of the 5 traffic signs, which gives an accuracy of 40%. If you take account of the fact that two of the images are very different from the training set ( the sign is not centered for the 50km/h sign, and the pedestrian sign is not in the training set), this model predicted 2 out of 3 signs. 
 
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+#### Model Certainty 
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
-
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+For the 30 km/h image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
