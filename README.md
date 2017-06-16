@@ -84,8 +84,11 @@ My final model consisted of the following layers:
 | Convolution 3x3	    | 1x1 stride, valid padding, outputs 24X24X24      									|
 | Activation					|					RELU					|
 | Fully connected		| Input = 13824. Output = 1200.       									|
+| Activation					|					RELU					|
 | Fully connected		| Input = 1200. Output = 150.       									|
+| Activation					|					RELU					|
 | Fully connected		| Input = 150. Output = 84.       									|
+| Activation					|					RELU					|
 | Fully connected		| Input = 84. Output = 43.       									|
 
 Really exploring the potential of a fully connected neural network with 4 fully connected layers.
@@ -101,8 +104,8 @@ To train the model, I used the same optimizer as the LeNet-5 solution, and I adj
 #### Approach
 
 My final model results were:
-* training set accuracy of 0.998
-* validation set accuracy of 0.939 
+* training set accuracy of 1.000
+* validation set accuracy of 0.944 
 * test set accuracy of 0.929
 
 An iterative approach was chosen:
@@ -130,22 +133,19 @@ Here are five German traffic signs that I found on the web:
 The second image might be difficult to classify because the sign is tilted and only taking half of the screen. This will be a test for the powers of the convolution steps. The fifth image is impossible to classify since there is no label for a pedestrian. I expect the model to do better on the three first images since they are speed limits, and the model was trained on more speed limit signs then other type of signs.
 
 #### Predictions
-2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
 Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| 30 km/h      		| Stop sign   									| 
-| 50 km/h   			| U-turn 										|
-| 60 km/h		| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| No entry		| Slippery Road      							|
-| Pedestrian		| Slippery Road      							|
-| Stop		| Slippery Road      							|
+| 30 km/h      		| Speed limit (60km/h)   									| 
+| 50 km/h   			| Ahead only										|
+| 60 km/h		| Speed limit (60km/h)											|
+| Pedestrian		| 	Stop     							|
+| Stop		| 	Stop      							|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of 92.9%.
+The model was able to correctly guess 2 of the 5 traffic signs, which gives an accuracy of 40%. If you take account of the fact that two of the images are very different from the training set ( the sign is not centered for the 50km/h sign, and the pedestrian sign is not in the training set), this model predicted 2 out of 3 signs. 
 
 ####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
