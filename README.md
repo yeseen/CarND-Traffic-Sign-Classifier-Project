@@ -149,17 +149,19 @@ The model was able to correctly guess 2 of the 5 traffic signs, which gives an a
 
 #### Model Certainty 
 
-For the 30 km/h image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+For all the images except the 30km/h and the 50km/h, the model is %100 sure of its prediction (probability of 1.00), even for when the prediction is wrong (the pedestrian sign is classified as a stop sign). 
+
+For the 30km/h sign, the top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| .337         			| Speed limit (60km/h)   									| 
+| .169     				| General caution 										|
+| .162	| 		Road Work							|
+| .144	      			| 			Wild animals crossing 		 				|
+| .0697				    | Dangerous curve to the left      							|
 
 
-For the second image ... 
+For the 50km/h sign, the top five soft max proba ... 
 
 
