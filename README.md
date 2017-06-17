@@ -151,6 +151,8 @@ The model was able to correctly guess 2 of the 5 traffic signs, which gives an a
 
 For all the images except the 30km/h and the 50km/h, the model is %100 sure of its prediction (probability of 1.00), even for when the prediction is wrong (the pedestrian sign is classified as a stop sign). 
 
+For the 50km/h sign, the model was almost certain that the sign is an Ahead only sign with a probability of 98.8%. The second highest probability is 1.18% for being a "No passing for vehicles over 3.5 metric tons" sign. The rest of the probablities are practically zero.
+
 For the 30km/h sign, the top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
@@ -160,8 +162,5 @@ For the 30km/h sign, the top five soft max probabilities were
 | .162	| 		Road Work							|
 | .144	      			| 			Wild animals crossing 		 				|
 | .0697				    | Dangerous curve to the left      							|
-
-
-For the 50km/h sign, the top five soft max proba ... 
 
 
